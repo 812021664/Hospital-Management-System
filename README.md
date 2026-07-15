@@ -1,4 +1,4 @@
-# Hospital-Manage-System
+# Hospital-Management-System
 This repository contains the complete implementation of a hospital appointment and triage management system.  
 ### Features
 - Circular Queue for routine appointment handling
