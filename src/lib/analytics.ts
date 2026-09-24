@@ -1,0 +1,11 @@
+import type { Appointment, Doctor, Patient, TriageCase } from '@/types';
+import { dateKey } from './utils';
+
+export function todayAppointments(appointments: Appointment[]) { return appointments.filter((item) => item.date === dateKey()); }
+export function appointmentStatusCounts(appointments: Appointment[]) { return appointments.reduce<Record<string, number>>((counts, item) => ({ ...counts, [item.status]: (counts[item.status] ?? 0) + 1 }), {}); }
+export function acuityCounts(cases: TriageCase[]) { return [1, 2, 3, 4, 5].map((severity) => ({ severity, count: cases.filter((item) => item.status === 'Waiting' && item.severity === severity).length })); }
+export function averageWait(cases: TriageCase[]) { const waiting = cases.filter((item) => item.status === 'Waiting'); if (!waiting.length) return 0; return Math.round(waiting.reduce((sum, item) => sum + Math.max(0, (Date.now() - +new Date(item.arrivalAt)) / 60_000), 0) / waiting.length); }
+export function doctorUtilization(doctor: Doctor, appointments: Appointment[]) { const count = todayAppointments(appointments).filter((item) => item.doctorId === doctor.id && !['Cancelled', 'No show'].includes(item.status)).length; return Math.min(100, Math.round((count / 8) * 100)); }
+export function uniquePatients(appointments: Appointment[]) { return new Set(appointments.map((item) => item.patientId)).size; }
+export function dailyAppointments(appointments: Appointment[], days = 7) { return Array.from({ length: days }, (_, index) => { const date = new Date(); date.setDate(date.getDate() - days + index + 1); const key = dateKey(date); const items = appointments.filter((item) => item.date === key); return { day: date.toLocaleDateString('en-US', { weekday: 'short' }), label: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), date: key, total: items.filter((item) => !['Cancelled', 'No show'].includes(item.status)).length, completed: items.filter((item) => item.status === 'Completed').length }; }); }
+export function patientRisk(patient: Patient) { let score = patient.allergies.length * 15 + patient.conditions.length * 8; if (patient.status === 'Critical') score += 45; else if (patient.status === 'Admitted') score += 25; return Math.min(100, score); }

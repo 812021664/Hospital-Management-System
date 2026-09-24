@@ -1,6 +1,6 @@
 # Complexity Analysis
 
-Generated: 2025-12-07 08:53:46
+> Updated for Aegis v2. The maintained engine is implemented in `backend/app/domain/hospital_system.py`; `hospital_system.py` re-exports the same API for backward compatibility.
 
 This document lists time complexity T(n) and space usage for the major methods and data structures
 used in the **Hospital Appointment & Triage System** implementation.

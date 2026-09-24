@@ -1,0 +1,1 @@
+"""Aegis hospital backend package."""

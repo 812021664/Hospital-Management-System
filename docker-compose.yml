@@ -1,0 +1,18 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      APP_ALLOWED_ORIGINS: http://localhost:5173,http://localhost:4173
+    ports:
+      - "8000:8000"
+    volumes:
+      - aegis-data:/app/backend/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  aegis-data:

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif; color: #edf7f4; background: #071014; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html { min-width: 320px; min-height: 100%; background: #071014; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; background: radial-gradient(circle at 88% -8%, rgba(8,145,178,.2), transparent 34%), radial-gradient(circle at 8% 100%, rgba(13,148,136,.1), transparent 28%), #071014; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid rgba(103,232,249,.9); outline-offset: 2px; }
+::selection { color: #061014; background: #67e8f9; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { border: 2px solid transparent; border-radius: 999px; background: rgba(255,255,255,.16); background-clip: padding-box; }
+
+@layer components {
+  .liquid-glass { @apply border border-white/[0.08] bg-white/[0.045] shadow-glass backdrop-blur-2xl; }
+  .glass-panel { background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.022)); border: 1px solid rgba(255,255,255,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 24px 70px rgba(0,0,0,.25); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+  .input-glass { @apply w-full rounded-xl border border-white/[0.09] bg-black/20 px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 transition focus:border-clinical-400/60 focus:bg-black/30 focus:outline-none focus:ring-2 focus:ring-clinical-400/10; }
+  .label { @apply mb-1.5 block text-xs font-medium tracking-wide text-white/55; }
+  .data-table { @apply w-full border-collapse text-left text-sm; }
+  .data-table thead { @apply border-b border-white/[0.07] bg-white/[0.025]; }
+  .data-table th { @apply px-5 py-3.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/38; }
+  .data-table td { @apply border-b border-white/[0.055] px-5 py-4 text-white/70; }
+  .data-table tbody tr { @apply transition-colors hover:bg-white/[0.025]; }
+  .data-table tbody tr:last-child td { @apply border-b-0; }
+  .eyebrow { @apply text-[10px] font-semibold uppercase tracking-[0.22em] text-clinical-300/80; }
+}
+
+.recharts-cartesian-axis-tick-value { fill: rgba(255,255,255,.35); font-size: 11px; }
+.recharts-tooltip-wrapper:focus-visible { outline: none; }
+.gradient-text { background: linear-gradient(105deg, #edf7f4 12%, #a5f3fc 68%, #4adeb5 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.noise::before { position: fixed; inset: 0; z-index: -1; pointer-events: none; content: ''; opacity: .022; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); }
+
+@media print { .no-print { display: none !important; } body { color: #111 !important; background: white !important; } .glass-panel { color: #111 !important; border-color: #ddd !important; background: white !important; box-shadow: none !important; } }

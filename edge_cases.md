@@ -1,5 +1,6 @@
-
 # Edge Case Test Scenarios
+
+The core scenarios below are covered in `test_hospital_system.py`; API synchronization, conflicts, and triage lifecycle scenarios are covered in `backend/tests/test_api.py`.
 
 1. Booking with no free slots → expect None
 2. Booking an unregistered patient → expect ValueError

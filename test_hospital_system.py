@@ -1,5 +1,5 @@
 import pytest
-from src.hospital_system import HospitalSystem, Token
+from hospital_system import HospitalSystem, Token
 
 def setup_simple_system():
     hs = HospitalSystem(queue_capacity=10)
