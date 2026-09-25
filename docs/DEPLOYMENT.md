@@ -15,7 +15,7 @@ The repository is configured for Netlify with:
 ```text
 Build command: npm run build
 Publish directory: dist
-Node version: 20
+Node version: 20, pinned by `netlify.toml` and `.nvmrc`
 ```
 
 The intended public Netlify URL is:

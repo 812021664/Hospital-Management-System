@@ -246,7 +246,7 @@ Netlify configuration is included:
 ```text
 Build command: npm run build
 Publish directory: dist
-Node version: 20
+Node version: 20, pinned by `netlify.toml` and `.nvmrc`
 ```
 
 The intended Netlify destination is [imaginative-churros-ee9ad0.netlify.app](https://imaginative-churros-ee9ad0.netlify.app). `netlify.toml`, `public/_redirects`, and `vercel.json` provide SPA history fallback; Netlify also receives asset caching and security headers.
