@@ -1,4 +1,4 @@
-# Aegis Health API
+# Aarogya Health API
 
 FastAPI service for the upgraded hospital management system. It preserves the original Python circular queue, min-heap triage, linked schedules, patient hash index, undo stack, and reports while adding validated REST endpoints and persistent workspace data.
 

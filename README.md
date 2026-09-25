@@ -1,16 +1,16 @@
 <div align="center">
 
-<img src="public/pulse.svg" alt="Aegis Health logo" width="88" />
+<img src="public/pulse.svg" alt="Aarogya Health logo" width="88" />
 
-<h1>Aegis Health</h1>
+<h1>Aarogya Health</h1>
 <h3>Every patient seen. Every priority understood.</h3>
 
 <p>
-A complete hospital management workspace for patient records, appointments, clinician schedules, severity-first triage, operational analytics, and clinical reporting.
+A complete hospital management workspace for Indian hospitals and healthcare teams, covering patient records, appointments, clinician schedules, severity-first triage, operational analytics, and clinical reporting.
 </p>
 
 <p>
-  <a href="#quick-start"><img alt="Run Aegis locally" src="https://img.shields.io/badge/Quick_Start-Run_Locally-22D3EE?style=for-the-badge&logo=fastapi&logoColor=071014" /></a>
+  <a href="#quick-start"><img alt="Run Aarogya locally" src="https://img.shields.io/badge/Quick_Start-Run_Locally-22D3EE?style=for-the-badge&logo=fastapi&logoColor=071014" /></a>
   <a href="https://github.com/812021664/Hospital-Management-System" target="_blank" rel="noopener noreferrer"><img alt="View source on GitHub" src="https://img.shields.io/badge/GitHub-View_Source-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
 
@@ -29,15 +29,15 @@ A complete hospital management workspace for patient records, appointments, clin
 
 ## Clinical command center
 
-![Aegis Health clinical command center](docs/images/command-center.png)
+![Aarogya Health clinical command center](docs/images/command-center.png)
 
-Aegis brings the day’s access, acuity, capacity, and handoff signals into one calm operational view. The interface remains responsive, keyboard-friendly, and usable when the backend is unavailable.
+Aarogya brings the day’s access, acuity, capacity, and handoff signals into one calm operational view. The interface remains responsive, keyboard-friendly, and usable when the backend is unavailable.
 
 ## What changed from the original repository
 
 The original project was a Python console application built around five classic data structures. Those algorithms remain part of the product and are now exposed through a complete web system.
 
-| Original capability | Upgraded Aegis implementation |
+| Original capability | Upgraded Aarogya implementation |
 | :--- | :--- |
 | Circular routine queue | Appointment scheduling, status transitions, capacity checks, and operational calendar |
 | Min-heap emergency triage | Severity-first clinical queue with vitals, wait targets, assignment, and handoff |
@@ -47,6 +47,18 @@ The original project was a Python console application built around five classic 
 | Per-doctor and served/pending reports | Hospital analytics, acuity snapshots, visit outcomes, and CSV/JSON/PDF exports |
 | Console interaction | Responsive React clinical workspace |
 | In-memory state | Validated FastAPI service with persistent workspace storage and local browser fallback |
+
+## India-ready demonstration context
+
+The seeded workspace is designed to feel familiar to Indian hospital teams while remaining completely synthetic:
+
+- Indian patient and clinician names across diverse regions
+- Indian mobile numbers and PIN-coded addresses from Mumbai, Delhi, Bengaluru, Chennai, Pune, Hyderabad, Kochi, Jaipur, Kolkata, Indore, and Thiruvananthapuram
+- `Asia/Kolkata` timezone and India’s `108` emergency number
+- Familiar MRN format and insurance contexts including Star Health, HDFC Ergo, Niva Bupa, ICICI Lombard, New India Assurance, Tata AIG, CGHS, ESIC, and Ayushman Bharat PM-JAY
+- English clinical workflows with interpreter-ready appointment notes
+
+No record represents a real person. See [`docs/INDIA_LOCALIZATION.md`](docs/INDIA_LOCALIZATION.md).
 
 ## Product modules
 
@@ -59,7 +71,7 @@ The original project was a Python console application built around five classic 
 - Critical and emergent escalation styling
 - Walk-in creation, encounter completion, and queue export
 
-![Aegis Health triage command center](docs/images/triage-center.png)
+![Aarogya Health triage command center](docs/images/triage-center.png)
 
 ### Patient records
 
@@ -69,7 +81,7 @@ The original project was a Python console application built around five classic 
 - Patient registration with server-side-compatible validation
 - Privacy-aware CSV export
 
-![Aegis Health patient directory](docs/images/patient-directory.png)
+![Aarogya Health patient directory](docs/images/patient-directory.png)
 
 ### Appointment operations
 
@@ -126,7 +138,7 @@ flowchart LR
     CORE --> UNDO[Undo stack]
 ```
 
-When the API is available, Aegis imports and hydrates the workspace, then write-through workflows synchronize patients, appointments, clinicians, and triage events. If the API is unavailable, the interface switches to local persistence without blocking care operations.
+When the API is available, Aarogya imports and hydrates the workspace, then write-through workflows synchronize patients, appointments, clinicians, and triage events. If the API is unavailable, the interface switches to local persistence without blocking care operations.
 
 ## Quick start
 

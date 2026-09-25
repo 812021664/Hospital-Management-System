@@ -8,11 +8,11 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - aegis-data:/app/backend/data
+      - aarogya-data:/app/backend/data
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
       interval: 10s
       timeout: 5s
       retries: 5
 volumes:
-  aegis-data:
+  aarogya-data:

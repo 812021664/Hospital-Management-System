@@ -1,6 +1,10 @@
 # Security and Clinical Data Safety
 
-Aegis is a demonstration and educational system. It is not a certified medical device, electronic health record, or production clinical platform.
+Aarogya is a demonstration and educational system. It is not a certified medical device, electronic health record, or production clinical platform.
+
+## India and DPDP Act 2023
+
+Before processing any real Indian health or personal data, obtain appropriate notice and consent, minimize collection, define lawful purpose and retention, implement data-subject rights, secure identifiable health information, and complete legal and compliance review under applicable requirements including the Digital Personal Data Protection Act, 2023. Do not use Aadhaar numbers in this demonstration.
 
 ## Before handling real patient data
 

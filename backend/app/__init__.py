@@ -1,1 +1,1 @@
-"""FastAPI application for Aegis Health."""
+"""FastAPI application for Aarogya Health."""

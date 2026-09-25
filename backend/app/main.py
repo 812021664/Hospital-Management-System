@@ -19,7 +19,7 @@ from .models import (
 )
 
 app = FastAPI(
-    title="Aegis Health API",
+    title="Aarogya Health API",
     version="2.0.0",
     description="Appointment, patient, clinician, and severity-first triage management.",
 )
@@ -40,7 +40,7 @@ app.add_middleware(
 @app.get("/health", tags=["system"])
 @app.get("/api/health", tags=["system"])
 def health() -> dict[str, str]:
-    return {"status": "UP", "service": "aegis-health-api"}
+    return {"status": "UP", "service": "aarogya-health-api"}
 
 
 @app.get("/api/status", response_model=WorkspaceStatus, tags=["workspace"])

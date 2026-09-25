@@ -76,4 +76,4 @@ export const useAppStore = create<AppState>()(persist((set, get) => ({
   addActivity: (activity) => set((state) => ({ activities: [{ ...activity, id: uid('activity'), timestamp: new Date().toISOString() }, ...state.activities] })),
   replaceData: (data) => set(data),
   resetDemo: () => set({ ...clone(initial) })
-}), { name: 'aegis-hospital-data', version: 1 }));
+}), { name: 'aarogya-hospital-data', version: 1 }));

@@ -39,7 +39,7 @@ VITE_ENVIRONMENT=production
 API:
 
 ```env
-APP_ALLOWED_ORIGINS=https://aegis.example.org
+APP_ALLOWED_ORIGINS=https://aarogya.example.org
 ```
 
 Never put secrets in `VITE_*` variables.

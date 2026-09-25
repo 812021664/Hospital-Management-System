@@ -1,1 +1,1 @@
-"""Aegis hospital backend package."""
+"""Aarogya hospital backend package."""
