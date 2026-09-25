@@ -10,7 +10,25 @@ npm test
 npm run build
 ```
 
-Publish `dist/` to Netlify, Vercel, or another static host. SPA history fallback is configured in `netlify.toml`, `vercel.json`, and `public/_redirects`.
+The repository is configured for Netlify with:
+
+```text
+Build command: npm run build
+Publish directory: dist
+Node version: 20
+```
+
+The intended public Netlify URL is:
+
+```text
+https://imaginative-churros-ee9ad0.netlify.app
+```
+
+For automatic deployment, connect that Netlify site to `812021664/Hospital-Management-System` and use the repository root as the base directory. For a manual production deploy, install and authenticate the Netlify CLI, link the site, and run `npx netlify-cli deploy --build --prod`.
+
+SPA history fallback, long-lived asset caching, and security headers are configured in `netlify.toml`. Equivalent routing configuration is also present in `vercel.json` and `public/_redirects`.
+
+A static Netlify deployment has no FastAPI process. Leave `VITE_API_BASE_URL` empty to use persisted browser data, or set it to an independently deployed HTTPS API origin to enable remote synchronization.
 
 ## API
 

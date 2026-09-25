@@ -12,6 +12,7 @@ A complete hospital management workspace for Indian hospitals and healthcare tea
 <p>
   <a href="#quick-start"><img alt="Run Aarogya locally" src="https://img.shields.io/badge/Quick_Start-Run_Locally-22D3EE?style=for-the-badge&logo=fastapi&logoColor=071014" /></a>
   <a href="https://github.com/812021664/Hospital-Management-System" target="_blank" rel="noopener noreferrer"><img alt="View source on GitHub" src="https://img.shields.io/badge/GitHub-View_Source-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://imaginative-churros-ee9ad0.netlify.app" target="_blank" rel="noopener noreferrer"><img alt="Open Aarogya on Netlify" src="https://img.shields.io/badge/Netlify-Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" /></a>
 </p>
 
 <p>
@@ -245,9 +246,12 @@ Netlify configuration is included:
 ```text
 Build command: npm run build
 Publish directory: dist
+Node version: 20
 ```
 
-`public/_redirects` and `vercel.json` provide SPA history fallback.
+The intended Netlify destination is [imaginative-churros-ee9ad0.netlify.app](https://imaginative-churros-ee9ad0.netlify.app). `netlify.toml`, `public/_redirects`, and `vercel.json` provide SPA history fallback; Netlify also receives asset caching and security headers.
+
+A static Netlify deployment starts in browser-persistence mode when `VITE_API_BASE_URL` is empty. Configure an HTTPS API origin only after deploying the FastAPI service separately.
 
 ### API
 
@@ -268,7 +272,7 @@ Never place database passwords, service credentials, or private provider keys in
 ```text
 TypeScript ............... passed
 ESLint ................... passed
-Frontend unit tests ....... 4 passed
+Frontend unit tests ....... 8 passed
 Production frontend build  passed
 Python data structures ... 5 passed
 FastAPI integration ...... 2 passed
